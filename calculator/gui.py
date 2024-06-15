@@ -347,8 +347,12 @@ class Calculator():
         self.showTextOnCanvas()
 
     def handleResult(self):
-        self.exp = str(eval(self.exp))
-        self.showTextOnCanvas()
+        try:
+            self.exp = str(eval(self.exp))
+        except: 
+            self.exp = "Infinity" 
+        finally:
+            self.showTextOnCanvas()
 
 
     def showTextOnCanvas(self):
